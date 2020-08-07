@@ -22,6 +22,9 @@ app.get('/:url*',(req,res)=>{
                 url=url+'&';
         }
     }
+
+    res.set('Access-Control-Allow-Origin','*');
+
     axios.get(url,{
         crossDomain : true
     }).then((response)=>{
