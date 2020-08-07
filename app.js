@@ -3,7 +3,7 @@ var axios = require('axios');
 var circularJSON = require('circular-json');
 
 var app = express();
-var port = process.env.port || 3000;
+var PORT = process.env.PORT || 3000;
 
 app.get('/:url*',(req,res)=>{
     var url = `https://${req.params.url}${req.params[0]}`;
@@ -36,6 +36,6 @@ app.get('/:url*',(req,res)=>{
     })
 })
 
-app.listen(port,()=>{
-    console.log(`Server running at port ${port}`);
+app.listen(PORT,()=>{
+    console.log(`Server running at port ${PORT}`);
 })
